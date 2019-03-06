@@ -1,3 +1,11 @@
+window.onload = function () {
+    setTimeout(() => {
+        const containerPreloader = document.getElementById('contenedorCarga');
+        contenedorCarga.style.visibility = 'hidden';
+        contenedorCarga.style.opacity = '0';
+      }, 2000);
+}
+
 window.obtenerSaldo = () => {
     let numeroBip = document.getElementById('numeroBip').value;
     let urlApiBip = 'http://bip-servicio.herokuapp.com/api/v1/solicitudes.json?bip=' + numeroBip;
@@ -11,25 +19,25 @@ window.obtenerSaldo = () => {
                   <table class="table table-sm ">
                      <tbody>
                         <tr>
-                          <th scope="row">N° Tarjeta</th>
+                          <td scope="row">N° Tarjeta</td>
                           <td>${data.id}</td>
                         </tr>
                         <tr>
-                            <th scope="row">Saldo Bip</th>
+                            <td scope="row">Saldo Bip</td>
                             <td>${data.saldoTarjeta}</td>
                           </tr>
                           <tr>
-                              <th scope="row">Fecha Saldo</th>
+                              <td scope="row">Fecha Saldo</td>
                               <td>${data.fechaSaldo}</td>
                             </tr>
                         <tr>
-                          <th scope="row">Estado Contrato</th>
+                          <td scope="row">Estado Contrato</td>
                           <td>${data.estadoContrato}</td>
                         </tr>
-                        
                       </tbody>
                     </table>
               </div>
+           
             `
         })
         .catch(error => {
