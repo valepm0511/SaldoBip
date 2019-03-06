@@ -8,7 +8,7 @@ window.onload = function () {
 
 window.obtenerSaldo = () => {
     let numeroBip = document.getElementById('numeroBip').value;
-    let urlApiBip = 'http://bip-servicio.herokuapp.com/api/v1/solicitudes.json?bip=' + numeroBip;
+    let urlApiBip = '//bip-servicio.herokuapp.com/api/v1/solicitudes.json?bip=' + numeroBip;
     var infoBip = document.getElementById('infoBip');
     fetch(urlApiBip)
         .then(res => res.json())
